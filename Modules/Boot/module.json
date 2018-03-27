@@ -1,0 +1,16 @@
+{
+    "name": "Boot",
+    "alias": "boot",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Boot\\Providers\\BootServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

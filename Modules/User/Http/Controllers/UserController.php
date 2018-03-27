@@ -39,6 +39,11 @@ class UserController extends Controller {
      * @return Response
      */
     public function store(RegisterRequest $request) {
+        
+        
+     
+        
+        //dd($request);
 
         $user = $this->registerUser($request);
         return response()->json(new UserResource($user));

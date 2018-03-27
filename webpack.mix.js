@@ -13,3 +13,8 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+// MediaManager
+mix.js('resources/assets/vendor/MediaManager/js/manager.js', 'public/assets/vendor/MediaManager')
+    .sass('resources/assets/vendor/MediaManager/sass/media.scss', 'public/assets/vendor/MediaManager/style.css')
+    .version();

@@ -17,6 +17,7 @@
         "laravel/tinker": "~1.0",
         "martinlindhe/laravel-vue-i18n-generator": "^0.1.23",
         "nwidart/laravel-modules": "^3.0",
+        "prettus/l5-repository": "^2.6",
         "tightenco/ziggy": "^0.6.2"
     },
     "require-dev": {
@@ -46,6 +47,8 @@
         "laravel": {
             "dont-discover": [
             ]
+        },
+        "installer-paths": {
         }
     },
     "scripts": {
@@ -57,7 +60,8 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
+            "@php artisan package:discover",
+            "App\\Providers\\EventServiceProvider::postAutoloadDump"
         ]
     },
     "config": {

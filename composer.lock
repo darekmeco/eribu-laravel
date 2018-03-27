@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6c8a1fb10474d1fb71423b56540ff681",
-    "content-hash": "4091d73a50e608b7f28d6b424b4ec44b",
+    "hash": "9bc73e7300bb7f0a91ba05014d259a62",
+    "content-hash": "36ea3a13a2cb14ff77ef98c59e38a0a5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -761,16 +761,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.11",
+            "version": "v5.6.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "195ba6a67bdad2a23105c7ab410cd43e0f20bb73"
+                "reference": "90ccb77a543ff063533083f427d5e655546afbad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/195ba6a67bdad2a23105c7ab410cd43e0f20bb73",
-                "reference": "195ba6a67bdad2a23105c7ab410cd43e0f20bb73",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/90ccb77a543ff063533083f427d5e655546afbad",
+                "reference": "90ccb77a543ff063533083f427d5e655546afbad",
                 "shasum": ""
             },
             "require": {
@@ -779,7 +779,7 @@
                 "erusev/parsedown": "~1.7",
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
-                "league/flysystem": "~1.0",
+                "league/flysystem": "^1.0.8",
                 "monolog/monolog": "~1.12",
                 "nesbot/carbon": "^1.24.1",
                 "php": "^7.1.3",
@@ -895,7 +895,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-03-09 16:53:27"
+            "time": "2018-03-26 13:45:20"
         },
         {
             "name": "laravel/tinker",
@@ -1177,16 +1177,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.24.2",
+            "version": "1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "bba6c6e410c6b4317e37a9474aeaa753808c3875"
+                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bba6c6e410c6b4317e37a9474aeaa753808c3875",
-                "reference": "bba6c6e410c6b4317e37a9474aeaa753808c3875",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cbcf13da0b531767e39eb86e9687f5deba9857b4",
+                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4",
                 "shasum": ""
             },
             "require": {
@@ -1226,7 +1226,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-03-10 10:10:14"
+            "time": "2018-03-19 15:50:49"
         },
         {
             "name": "nikic/php-parser",
@@ -1395,6 +1395,109 @@
                 "random"
             ],
             "time": "2017-09-27 21:40:39"
+        },
+        {
+            "name": "prettus/l5-repository",
+            "version": "2.6.32",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andersao/l5-repository.git",
+                "reference": "f6ebfffee80a38e1d2dcf479e70b1a9ead397c24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/f6ebfffee80a38e1d2dcf479e70b1a9ead397c24",
+                "reference": "f6ebfffee80a38e1d2dcf479e70b1a9ead397c24",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~5.0",
+                "illuminate/console": "~5.0",
+                "illuminate/database": "~5.0",
+                "illuminate/filesystem": "~5.0",
+                "illuminate/http": "~5.0",
+                "illuminate/pagination": "~5.0",
+                "illuminate/support": "~5.0",
+                "prettus/laravel-validation": "1.1.*"
+            },
+            "suggest": {
+                "league/fractal": "Required to use the Fractal Presenter (0.12.*).",
+                "prettus/laravel-validation": "Required to provide easy validation with the repository (1.1.*)",
+                "robclancy/presenter": "Required to use the Presenter Model (1.3.*)"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Prettus\\Repository\\Providers\\RepositoryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Prettus\\Repository\\": "src/Prettus/Repository/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anderson Andrade",
+                    "email": "contato@andersonandra.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel 5 - Repositories to  the database layer",
+            "keywords": [
+                "cache",
+                "eloquent",
+                "laravel",
+                "model",
+                "repository"
+            ],
+            "time": "2018-01-27 15:53:20"
+        },
+        {
+            "name": "prettus/laravel-validation",
+            "version": "1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andersao/laravel-validator.git",
+                "reference": "d9eb401fb3518a890b117e83bd25a4109fcdb704"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andersao/laravel-validator/zipball/d9eb401fb3518a890b117e83bd25a4109fcdb704",
+                "reference": "d9eb401fb3518a890b117e83bd25a4109fcdb704",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.4",
+                "illuminate/validation": "~5.4",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Prettus\\Validator\\": "src/Prettus/Validator/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Anderson Andrade",
+                    "email": "contato@andersonandra.de"
+                }
+            ],
+            "description": "Laravel Validation Service",
+            "keywords": [
+                "laravel",
+                "service",
+                "validation"
+            ],
+            "time": "2017-08-28 23:28:32"
         },
         {
             "name": "psr/container",
@@ -3655,16 +3758,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.0.2",
+            "version": "7.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9"
+                "reference": "536f4d853c12d8189963435088e8ff7c0daeab2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9",
-                "reference": "e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/536f4d853c12d8189963435088e8ff7c0daeab2e",
+                "reference": "536f4d853c12d8189963435088e8ff7c0daeab2e",
                 "shasum": ""
             },
             "require": {
@@ -3678,7 +3781,7 @@
                 "phar-io/version": "^1.0",
                 "php": "^7.1",
                 "phpspec/prophecy": "^1.7",
-                "phpunit/php-code-coverage": "^6.0",
+                "phpunit/php-code-coverage": "^6.0.1",
                 "phpunit/php-file-iterator": "^1.4.3",
                 "phpunit/php-text-template": "^1.2.1",
                 "phpunit/php-timer": "^2.0",
@@ -3731,7 +3834,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-02-26 07:03:12"
+            "time": "2018-03-26 07:36:48"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -4354,16 +4457,16 @@
         },
         {
             "name": "symfony/thanks",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/thanks.git",
-                "reference": "9474ce305253c2f0bc20322ff8e9973cf25c9a94"
+                "reference": "bade4992c46ed722162694b4af8d72f84402819a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/thanks/zipball/9474ce305253c2f0bc20322ff8e9973cf25c9a94",
-                "reference": "9474ce305253c2f0bc20322ff8e9973cf25c9a94",
+                "url": "https://api.github.com/repos/symfony/thanks/zipball/bade4992c46ed722162694b4af8d72f84402819a",
+                "reference": "bade4992c46ed722162694b4af8d72f84402819a",
                 "shasum": ""
             },
             "require": {
@@ -4393,7 +4496,7 @@
                 }
             ],
             "description": "Give thanks (in the form of a GitHub ⭐) to your fellow PHP package maintainers (not limited to Symfony components)!",
-            "time": "2018-02-02 13:47:40"
+            "time": "2018-03-14 21:51:39"
         },
         {
             "name": "theseer/tokenizer",

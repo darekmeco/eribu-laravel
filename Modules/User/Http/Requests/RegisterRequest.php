@@ -4,6 +4,7 @@ namespace Modules\User\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+
 class RegisterRequest extends FormRequest {
 
     /**
@@ -17,6 +18,22 @@ class RegisterRequest extends FormRequest {
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ];
+    }
+
+    public function validateResolved() {
+        
+        $this->prepareForValidation();
+        $instance = $this->getValidatorInstance();
+
+        if (!$this->passesAuthorization()) {
+            $this->failedAuthorization();
+        } elseif (!$instance->passes()) {
+            $this->failedValidation($instance);
+        }
+        if ($this->header('X-Custom-Header') == 'validate') {
+            $response = response()->make(['status'=>'success'])->throwResponse();
+        }   
+        
     }
 
     /**
