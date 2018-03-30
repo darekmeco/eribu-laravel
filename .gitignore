@@ -21,4 +21,4 @@ Homestead.json
 /nbproject/private/
 /composer.lock
 .project
-/.settings
+.settings/
