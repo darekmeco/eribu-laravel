@@ -2,10 +2,10 @@
 
 namespace Modules\Media\Entities;
 
+use Cartalyst\Support\Traits\NamespacedEntityTrait;
 use Dimsav\Translatable\Translatable;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Core\Traits\NamespacedEntity;
 use Modules\Media\Helpers\FileHelper;
 use Modules\Media\Image\Facade\Imagy;
 use Modules\Media\ValueObjects\MediaPath;
@@ -17,9 +17,9 @@ use Modules\Tag\Traits\TaggableTrait;
  * @package Modules\Media\Entities
  * @property \Modules\Media\ValueObjects\MediaPath path
  */
-class File extends Model implements TaggableInterface, Responsable
+class File extends Model implements Responsable
 {
-    use Translatable, NamespacedEntity, TaggableTrait;
+    use Translatable, NamespacedEntityTrait;
     /**
      * All the different images types where thumbnails should be created
      * @var array

@@ -1,5 +1,7 @@
 <?php
 
+use App\Providers\RepositoryServiceProvider;
+
 return [
 
     /*
@@ -147,7 +149,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Dimsav\Translatable\TranslatableServiceProvider::class,
-
+        
+       
         /*
          * Package Service Providers...
          */
@@ -155,6 +158,7 @@ return [
         /*
          * Application Service Providers...
          */
+        RepositoryServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,

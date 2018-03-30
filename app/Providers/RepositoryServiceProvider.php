@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\Media\Providers\FileRepositoryEloquent;
+use Modules\Media\Repositories\FileRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -22,8 +24,8 @@ class RepositoryServiceProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {
-        $this->app->bind(\App\Repositories\Test\PostRepository::class, \App\Repositories\Test\PostRepositoryEloquent::class);
+    {      
+        $this->app->bind(FileRepository::class, FileRepositoryEloquent::class);      
         //:end-bindings:
     }
 }

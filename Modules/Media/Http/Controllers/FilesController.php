@@ -1,30 +1,31 @@
 <?php
-
 namespace Modules\Media\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Media\Repositories\FileRepository;
 
-class FilesController extends Controller {
+class FilesController extends Controller
+{
 
     /**
      * FilesController constructor.
      *
      * @param FileRepository $repository
-     * @param FileValidator $validator
      */
-    public function __construct(FileRepository $repository, FileValidator $validator) {
+    public function __construct(FileRepository $repository)
+    {
         $this->repository = $repository;
-        $this->validator = $validator;
     }
 
     /**
      * Display a listing of the resource.
+     *
      * @return Response
      */
-    public function index() {
-        
+    public function index()
+    {
         $models = $this->repository->all();
         dd($models);
         
@@ -33,52 +34,57 @@ class FilesController extends Controller {
 
     /**
      * Show the form for creating a new resource.
+     *
      * @return Response
      */
-    public function create() {
+    public function create()
+    {
         return view('media::create');
     }
 
     /**
      * Store a newly created resource in storage.
-     * @param  Request $request
+     *
+     * @param Request $request
      * @return Response
      */
-    public function store(Request $request) {
-        
-    }
+    public function store(Request $request)
+    {}
 
     /**
      * Show the specified resource.
+     *
      * @return Response
      */
-    public function show() {
+    public function show()
+    {
         return view('media::show');
     }
 
     /**
      * Show the form for editing the specified resource.
+     *
      * @return Response
      */
-    public function edit() {
+    public function edit()
+    {
         return view('media::edit');
     }
 
     /**
      * Update the specified resource in storage.
-     * @param  Request $request
+     *
+     * @param Request $request
      * @return Response
      */
-    public function update(Request $request) {
-        
-    }
+    public function update(Request $request)
+    {}
 
     /**
      * Remove the specified resource from storage.
+     *
      * @return Response
      */
-    public function destroy() {
-        
-    }
-
+    public function destroy()
+    {}
 }

@@ -1,10 +1,10 @@
 <?php
-
 namespace Modules\Media\Providers;
 
+use Modules\Media\Entities\File;
+use Modules\Media\Repositories\FileRepository;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-
 
 /**
  * Class FileRepositoryEloquent.
@@ -13,6 +13,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
  */
 class FileRepositoryEloquent extends BaseRepository implements FileRepository
 {
+
     /**
      * Specify Model class name
      *
@@ -24,23 +25,10 @@ class FileRepositoryEloquent extends BaseRepository implements FileRepository
     }
 
     /**
-    * Specify Validator class name
-    *
-    * @return mixed
-    */
-    public function validator()
-    {
-
-        return FileValidator::class;
-    }
-
-
-    /**
      * Boot up the repository, pushing criteria
      */
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-    
 }
