@@ -1,4 +1,5 @@
 <?php
+
 namespace Modules\Media\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -6,16 +7,14 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Media\Repositories\FileRepository;
 
-class FilesController extends Controller
-{
+class FilesController extends Controller {
 
     /**
      * FilesController constructor.
      *
      * @param FileRepository $repository
      */
-    public function __construct(FileRepository $repository)
-    {
+    public function __construct(FileRepository $repository) {
         $this->repository = $repository;
     }
 
@@ -24,11 +23,10 @@ class FilesController extends Controller
      *
      * @return Response
      */
-    public function index()
-    {
+    public function index() {
         $models = $this->repository->all();
         dd($models);
-        
+
         return view('media::index');
     }
 
@@ -37,27 +35,36 @@ class FilesController extends Controller
      *
      * @return Response
      */
-    public function create()
-    {
+    public function create() {
         return view('media::create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
-     * @return Response
+     * @param UploadMediaRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
-    {}
+    public function store(UploadMediaRequest $request): JsonResponse {
+        $savedFile = $this->fileService->store($request->file('file'), $request->get('parent_id'));
+
+        if (is_string($savedFile)) {
+            return response()->json([
+                        'error' => $savedFile,
+                            ], 409);
+        }
+
+        event(new FileWasUploaded($savedFile));
+
+        return response()->json($savedFile->toArray());
+    }
 
     /**
      * Show the specified resource.
      *
      * @return Response
      */
-    public function show()
-    {
+    public function show() {
         return view('media::show');
     }
 
@@ -66,8 +73,7 @@ class FilesController extends Controller
      *
      * @return Response
      */
-    public function edit()
-    {
+    public function edit() {
         return view('media::edit');
     }
 
@@ -77,14 +83,17 @@ class FilesController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function update(Request $request)
-    {}
+    public function update(Request $request) {
+        
+    }
 
     /**
      * Remove the specified resource from storage.
      *
      * @return Response
      */
-    public function destroy()
-    {}
+    public function destroy() {
+        
+    }
+
 }
