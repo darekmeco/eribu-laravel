@@ -24,9 +24,7 @@ class FilesController extends Controller {
      * @return Response
      */
     public function index() {
-        $models = $this->repository->all();
-        dd($models);
-
+        $models = $this->repository->all();      
         return view('media::index');
     }
 
